@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Page</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div style="background-color: #50C878 " class="col-sm-8 col-sm-offset-2">
+        <div class="text-center">
+        <h3>Expose the foundations of your soul by</h3>
+        <h4>answering our ten easy questions</h4>
+        </div>
+          <form>
+            nomine:<br>
+            <input type="text" id="name" required>
+            <br>
+            <br>
+            picturae:<br>
+            <input type="text" id="photo" required>
+            <br>
+            <br>
+            <div>1. Your mind is always buzzing with unexplored ideas and plans.</div>
+            <select id="q1">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>2. Generally speaking, you rely more on your experience than your imagination.</div>
+            <select id="q2">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>3. You find it easy to stay relaxed and focused even when there is some pressure.</div>
+            <select id="q3">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>4. You rarely do something just out of sheer curiosity.</div>
+            <select id="q4">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>5. People can rarely upset you.</div>
+            <select id="q5">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>6. It is often difficult for you to relate to other people’s feelings.</div>
+            <select id="q6">
+              <option value="1" name="q6">1  strongly disagree</option>
+              <option value="2" name="q6">2</option>
+              <option value="3" name="q6">3</option>
+              <option value="4" name="q6">4</option>
+              <option value="5" name="q6">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>7. In a discussion, truth should be more important than people’s sensitivities.</div>
+            <select id="q7">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>8. You rarely get carried away by fantasies and ideas.</div>
+            <select id="q8">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>9. You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</div>
+            <select id="q9">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select>
+            <br>
+            <br>
+            <div>10. You feel more energetic after spending time with a group of people.</div>
+            <select id="q10">
+              <option value="1">1  strongly disagree</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5  strongly agree</option>
+            </select> 
+            <br>
+            <br>
+            <button id="quiz" type="submit" style="background-color: #98FB98" class="btn  btn-lg btn-block" value="submit">Submit</button>
+          </form>
+          <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="text-center col-sm-8 col-sm-offset-2">
+        <p><a href="/api/friends">API Friends List</a> <a href="http://www.play.vg/g2_imgs/g2_6.gif" target="_blank"> <button style='background-color: blue; height: 20px; width:20px '></button></a> <a href="https://github.com/BALMYIV/FriendFinder" target="_blank"> <a href="https://github.com/BALMYIV/FriendFinder" target="_blank">GitHub Repo</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<div class="matchName">text</div>
+<div class="matchImg">text</div>
+
+<script type="text/javascript">
+$('#quiz').on("click" , function(event) {
+	event.preventDefault();
+  
+  var profile = {
+    name: $('#name').val(),
+    photo: $('#photo').val(),
+    scores:[],
+    }
+
+  for (var i = 1; i <= 10; i++) {
+    var q = "#q"+i;
+    var qx = $(q).val();
+    profile.scores.push(qx);
+    console.log(qx);  
+  }
+  
+
+  $.post("/api/friends", profile, function(data) {
+      console.log(data);
+
+      $("#match-name").text(data.name);
+      $("#match-img").attr("src", data.photo);
+      $("#results-modal").modal("toggle");
+
+});
+});
+
+</script>
+</body>
+</html>
